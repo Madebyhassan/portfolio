@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="flex items-center justify-between px-12 py-24 bg-gray-100 min-h-screen">
+    <section className="flex items-center justify-between px-12 py-24 bg-gray-100">
       {/* Left side — text content */}
       <div className="flex flex-col gap-6 max-w-xl">
         {/* Available for work badge */}
