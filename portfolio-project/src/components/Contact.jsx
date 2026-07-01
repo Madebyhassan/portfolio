@@ -3,7 +3,11 @@ import emailjs from "@emailjs/browser";
 
 function Contact() {
   const formRef = useRef();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
   const handleChange = (e) => {
@@ -100,7 +104,7 @@ function Contact() {
                 <input
                   type="text"
                   name="from_name"
-                  value={form.name}
+                  value={form.from_name}
                   onChange={handleChange}
                   required
                   placeholder="John Smith"
@@ -115,7 +119,7 @@ function Contact() {
                 <input
                   type="email"
                   name="from_email"
-                  value={form.email}
+                  value={form.from_email}
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
