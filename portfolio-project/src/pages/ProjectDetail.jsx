@@ -52,7 +52,7 @@ function ProjectDetail() {
 
       {/* ── HERO ── */}
       <section
-        className="px-20 pt-20 relative overflow-hidden"
+        className="px-20 pt-20 pb-8 relative overflow-hidden"
         style={{ background: heroBg }}
       >
         {/* Radial glow */}
