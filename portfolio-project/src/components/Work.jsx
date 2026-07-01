@@ -1,40 +1,6 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-
-const projects = [
-  {
-    id: 1,
-    title: "Cozmos",
-    description: "Customizable Worlds to Showcase Products and Services",
-    category: "Brand Design",
-    categoryColor: "bg-indigo-100 text-indigo-500",
-    image: "/Cozmos-PC.png",
-  },
-  {
-    id: 2,
-    title: "Project Title",
-    description: "Short description of the project goes here.",
-    category: "Brand Design",
-    categoryColor: "bg-yellow-100 text-yellow-600",
-    image: "/project2.jpg",
-  },
-  {
-    id: 3,
-    title: "Monaa",
-    description: "Short description of the project goes here.",
-    category: "Design System",
-    categoryColor: "bg-pink-100 text-pink-500",
-    image: "/Monaa.png",
-  },
-  {
-    id: 4,
-    title: "Project Title",
-    description: "Short description of the project goes here.",
-    category: "Design System",
-    categoryColor: "bg-indigo-100 text-indigo-500",
-    image: "/project4.jpg",
-  },
-];
+import projects from "../data/projects";
 
 function Work() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -97,8 +63,9 @@ function Work() {
               className={`absolute w-80 transition-all duration-500 ease-in-out ${positionStyles[position]}`}
             >
               <ProjectCard
+                id={project.id}
                 title={project.title}
-                description={project.description}
+                description={project.summary}
                 category={project.category}
                 categoryColor={project.categoryColor}
                 image={project.image}
