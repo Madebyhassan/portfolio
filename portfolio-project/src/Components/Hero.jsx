@@ -1,42 +1,61 @@
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+
 function Hero() {
   return (
-    <section className="flex items-center justify-between px-12 py-24 bg-gray-100">
-      {/* Left side — text content */}
-      <div className="flex flex-col gap-6 max-w-xl">
-        {/* Available for work badge */}
-        <span className="w-fit px-4 py-1 rounded-full bg-green-100 text-green-600 text-sm font-medium">
-          Available for work
-        </span>
-
-        {/* Heading */}
-        <h1 className="text-6xl font-bold text-gray-900 leading-tight">
-          Designing & Building with <span className="text-indigo-500">AI</span>
-        </h1>
-
-        {/* Subtitle */}
-        <p className="text-gray-500 text-lg leading-relaxed">
-          I'm Hassan, a UI/AI Engineer crafting beautiful products powered by
-          intelligent design.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex items-center gap-6 mt-2">
-          <button className="bg-indigo-500 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-indigo-600 transition-colors">
-            View my work
-          </button>
-          <button className="text-indigo-500 text-sm font-medium hover:underline">
-            Let's Talk
-          </button>
+    <section className="flex items-center justify-center px-12 py-24 bg-gray-100">
+      <div className="flex items-center gap-16 max-w-6xl w-full">
+        {/* Left side — text content */}
+        <div className="flex flex-col gap-3 flex-1">
+          <span className="w-fit px-1 text-lg font-light text-gray-500">
+            Architect turned UX/UI Engineer
+          </span>
+          <h1 className="text-6xl font-bold text-gray-900 leading-tight">
+            Designing & Building with{" "}
+            <span className="text-indigo-500">AI</span>
+          </h1>
+          <p className="text-gray-500 font-medium text-lg leading-relaxed">
+            I'm Hassan, a UX/UI Engineer trained with an architects mindset. I{" "}
+            <span className="text-indigo-500 font-bold">DESIGN</span> the
+            experiences,{" "}
+            <span className="text-indigo-500 font-bold">BUILD</span> the
+            frontend, and{" "}
+            <span className="text-indigo-500 font-bold">SHIP</span> with AI.
+          </p>
+          <div className="flex items-center gap-6 mt-2">
+            <button
+              onClick={() =>
+                document
+                  .getElementById("work")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+              className="bg-indigo-500 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-indigo-600 transition-colors cursor-pointer"
+            >
+              View my work
+            </button>
+            <button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+              className="text-indigo-500 text-sm font-medium hover:underline cursor-pointer"
+            >
+              Let's Talk
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Right side — photo placeholder */}
-      <div className="w-96 h-130 bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400 text-sm shrink-0">
-        Your Photo
+        {/* Right side — Lottie animation */}
+        <div className="shrink-0">
+          <img
+            src="/Hassan Picture.png"
+            alt="Hassan Al-Hashimi"
+            className="w-96 h-130 object-cover rounded-2xl"
+          />
+        </div>
       </div>
     </section>
   );
 }
 
 export default Hero;
-``;
