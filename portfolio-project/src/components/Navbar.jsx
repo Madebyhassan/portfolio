@@ -1,7 +1,15 @@
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSectionLink = (sectionId) => {
     if (window.location.pathname === "/") {
@@ -14,19 +22,23 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between px-12 py-5 bg-white border-b border-gray-100">
-      {/* Logo */}
-      <Link to="/" className="flex flex-col items-center">
-        <span className="text-indigo-500 font-bold text-lg space-x-2 tracking-[0.2em]">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-4 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-md border-b border-gray-200/60 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <Link to="/" className="flex flex-col">
+        <span className="text-indigo-500 font-bold text-lg tracking-widest">
           Hassan Al-Hashimi
         </span>
-        <span className="text-gray-500 text-sm font-normal tracking-[0.4em]">
-          UX/UI Engineer
+        <span className="text-gray-400 text-xs font-normal tracking-[0.3em]">
+          UX/AI Engineer
         </span>
       </Link>
 
-      {/* Nav links */}
-      <div className="flex gap-10 text-gray-700 text-sm">
+      <div className="flex gap-10 text-gray-600 text-sm">
         <button
           onClick={() => handleSectionLink("work")}
           className="hover:text-indigo-500 transition-colors cursor-pointer"
@@ -50,7 +62,6 @@ function Navbar() {
         </button>
       </div>
 
-      {/* CTA */}
       <button
         onClick={() => handleSectionLink("contact")}
         className="bg-indigo-500 text-white px-5 py-2 rounded-full text-sm hover:bg-indigo-600 transition-colors cursor-pointer"

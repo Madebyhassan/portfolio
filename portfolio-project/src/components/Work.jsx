@@ -37,19 +37,28 @@ function Work() {
   };
 
   return (
-    <section id="work" className="px-12 py-24 bg-white overflow-hidden">
+    <section
+      id="work"
+      className="relative px-12 py-20 bg-white overflow-hidden"
+    >
       {/* Section header */}
-      <div className="text-center mb-14">
-        <p className="text-indigo-500 text-sm font-medium mb-3">My Work</p>
-        <h2 className="text-gray-900 text-4xl font-bold mb-4">
+      <div className="text-center mb-14 pt-4 relative z-10">
+        <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="w-8 h-px bg-indigo-500" />
+          <span className="text-indigo-500 text-xs font-semibold tracking-[0.2em] uppercase">
+            Selected Work
+          </span>
+          <div className="w-8 h-px bg-indigo-500" />
+        </div>
+        <h2 className="text-gray-900 text-5xl font-extrabold tracking-tight mb-4">
           Projects I've Built
         </h2>
-        <p className="text-gray-400 text-base">
+        <p className="text-gray-400 text-base max-w-md mx-auto leading-relaxed">
           A collection of real products, unique ideas and end-to-end projects
         </p>
       </div>
 
-      {/* Carousel */}
+      {/* Carousel — unchanged */}
       <div
         className="relative flex items-center justify-center h-130"
         onTouchStart={handleTouchStart}
@@ -75,7 +84,7 @@ function Work() {
         })}
       </div>
 
-      {/* Arrow buttons */}
+      {/* Arrow buttons + dots — unchanged */}
       <div className="flex items-center justify-center gap-6 mt-8">
         <button
           onClick={prev}
@@ -84,7 +93,6 @@ function Work() {
           ←
         </button>
 
-        {/* Dot indicators */}
         <div className="flex gap-2">
           {projects.map((_, index) => (
             <button

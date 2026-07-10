@@ -1,37 +1,150 @@
-const skills = [
-  "Figma",
-  "Design Systems",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Prototyping",
-  "UI Design",
-  "AI & Emerging Tech",
-  "React",
-  "User Research",
-  "Cross-Functional Collaboration",
-  "Interaction UI Components",
+const services = [
+  {
+    id: "design",
+    icon: "🎨",
+    title: "Design",
+    description:
+      "From early research through to high-fidelity UI — I design products that are both beautiful and grounded in real user needs.",
+    tools: [
+      "Figma",
+      "Design Systems",
+      "UI/UX Research",
+      "Prototyping",
+      "User Flows",
+      "Wireframing",
+    ],
+    accent: "rgba(99,102,241,0.15)",
+    border: "rgba(99,102,241,0.25)",
+  },
+  {
+    id: "frontend",
+    icon: "⚡",
+    title: "Frontend",
+    description:
+      "I translate designs into clean, working code. No handoff friction — I do both sides, so what gets built matches what was designed.",
+    tools: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+    accent: "rgba(139,92,246,0.15)",
+    border: "rgba(139,92,246,0.25)",
+  },
+  {
+    id: "ai",
+    icon: "🤖",
+    title: "AI Engineering",
+    description:
+      "I build products that use AI meaningfully — not as a gimmick, but as a genuine layer that makes the experience smarter and faster.",
+    tools: [
+      "Anthropic API",
+      "Prompt Engineering",
+      "AI Integration",
+      "Claude",
+      "LLM Products",
+    ],
+    accent: "rgba(16,185,129,0.12)",
+    border: "rgba(16,185,129,0.25)",
+  },
 ];
 
 function Skills() {
   return (
-    <section id="skills" className="px-12 py-24 bg-gray-100">
+    <section
+      id="skills"
+      className="relative px-12 py-24 pb-48"
+      style={{ background: "#0A0A1B" }}
+    >
+      {/* Background glows */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 80% 50%, rgba(99,102,241,0.2) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 20% 50%, rgba(139,92,246,0.16) 0%, transparent 70%)",
+        }}
+      />
+
       {/* Section header */}
-      <div className="text-center mb-12">
-        <p className="text-indigo-500 text-sm font-medium mb-3">What I do</p>
-        <h2 className="text-gray-900 text-4xl font-bold">Skills & Tools</h2>
+      <div className="text-center mb-16 relative z-10">
+        <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="w-8 h-px bg-indigo-500" />
+          <span className="text-indigo-400 text-xs font-semibold tracking-[0.2em] uppercase">
+            What I Do
+          </span>
+          <div className="w-8 h-px bg-indigo-500" />
+        </div>
+        <h2 className="text-white text-5xl font-extrabold tracking-tight mb-4">
+          Skills & Services
+        </h2>
+        <p className="text-gray-500 text-base max-w-md mx-auto leading-relaxed">
+          I sit across design and engineering — which means I can move fast,
+          think holistically, and bridge the gap between ideas and shipped
+          product.
+        </p>
       </div>
 
-      {/* Pills */}
-      <div className="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto">
-        {skills.map((skill) => (
-          <span
-            key={skill}
-            className="px-5 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-indigo-400 hover:text-indigo-500 transition-colors"
+      {/* Service cards */}
+      <div className="max-w-6xl mx-auto grid grid-cols-3 gap-6 relative z-10">
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className="rounded-2xl p-8 flex flex-col gap-5 transition-transform duration-300 hover:-translate-y-1"
+            style={{
+              background: service.accent,
+              border: `1px solid ${service.border}`,
+            }}
           >
-            {skill}
-          </span>
+            {/* Icon */}
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: "rgba(255,255,255,0.06)" }}
+            >
+              {service.icon}
+            </div>
+
+            {/* Title */}
+            <h3 className="text-white text-xl font-bold">{service.title}</h3>
+
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed flex-1">
+              {service.description}
+            </p>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-white/10" />
+
+            {/* Tool pills */}
+            <div className="flex flex-wrap gap-2">
+              {service.tools.map((tool) => (
+                <span
+                  key={tool}
+                  className="px-3 py-1 rounded-full text-xs font-medium text-gray-400 border border-white/10"
+                  style={{ background: "rgba(255,255,255,0.04)" }}
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
         ))}
+      </div>
+
+      {/* Bottom wave into Contact section */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden z-">
+        <svg
+          viewBox="0 0 1440 120"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style={{ display: "block", width: "100%", height: "100px" }}
+        >
+          <path
+            d="M0,90 C150,90 300,5 500,10 C680,15 780,90 950,85 C1100,80 1280,35 1440,70 L1440,120 L0,120 Z"
+            fill="#ffffff"
+          />
+        </svg>
       </div>
     </section>
   );
