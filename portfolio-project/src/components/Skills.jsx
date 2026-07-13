@@ -4,7 +4,7 @@ const services = [
     icon: "🎨",
     title: "Design",
     description:
-      "From early research through to high-fidelity UI — I design products that are both beautiful and grounded in real user needs.",
+      "From concept to high-fidelity UI — I design end-to-end products that are both beautiful and functional.",
     tools: [
       "Figma",
       "Design Systems",
@@ -21,8 +21,8 @@ const services = [
     icon: "⚡",
     title: "Frontend",
     description:
-      "I translate designs into clean, working code. No handoff friction — I do both sides, so what gets built matches what was designed.",
-    tools: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+      "I'm just as comfortable in frontend development as I am in Figma. This results in fewer compromises between design and code.",
+    tools: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Next.js"],
     accent: "rgba(139,92,246,0.15)",
     border: "rgba(139,92,246,0.25)",
   },
@@ -31,13 +31,13 @@ const services = [
     icon: "🤖",
     title: "AI Engineering",
     description:
-      "I build products that use AI meaningfully — not as a gimmick, but as a genuine layer that makes the experience smarter and faster.",
+      "I build products that integrate AI meaningfully, making the experience smarter and faster.",
     tools: [
       "Anthropic API",
       "Prompt Engineering",
       "AI Integration",
-      "Claude",
-      "LLM Products",
+      "LLM",
+      "Gemini",
     ],
     accent: "rgba(16,185,129,0.12)",
     border: "rgba(16,185,129,0.25)",
@@ -79,10 +79,9 @@ function Skills() {
         <h2 className="text-white text-5xl font-extrabold tracking-tight mb-4">
           Skills & Services
         </h2>
-        <p className="text-gray-500 text-base max-w-md mx-auto leading-relaxed">
-          I sit across design and engineering — which means I can move fast,
-          think holistically, and bridge the gap between ideas and shipped
-          product.
+        <p className="text-gray-400 text-base max-w-md mx-auto leading-relaxed">
+          Design, engineering, and AI in one person. Less back and forth, more
+          shipped product.
         </p>
       </div>
 
@@ -109,7 +108,7 @@ function Skills() {
             <h3 className="text-white text-xl font-bold">{service.title}</h3>
 
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed flex-1">
+            <p className="text-gray-300 text-sm leading-relaxed flex-1">
               {service.description}
             </p>
 
@@ -121,7 +120,7 @@ function Skills() {
               {service.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="px-3 py-1 rounded-full text-xs font-medium text-gray-400 border border-white/10"
+                  className="px-3 py-1 rounded-full text-xs font-medium text-gray-300 border border-white/30"
                   style={{ background: "rgba(255,255,255,0.04)" }}
                 >
                   {tool}

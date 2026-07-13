@@ -29,23 +29,30 @@ function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <Link to="/" className="flex flex-col">
+      <Link to="/" className="flex flex-col items-center">
         <span className="text-indigo-500 font-bold text-lg tracking-widest">
           Hassan Al-Hashimi
         </span>
-        <span className="text-gray-400 text-xs font-normal tracking-[0.3em]">
+        <span
+          className={`text-xs font-normal tracking-[0.3em] transition-colors duration-300 ${scrolled ? "text-gray-500" : "text-white/80"}`}
+        >
           UX/AI Engineer
         </span>
       </Link>
 
-      <div className="flex gap-10 text-gray-600 text-sm">
+      <div
+        className={`flex gap-10 text-sm transition-colors duration-300 ${scrolled ? "text-gray-500" : "text-white/80"}`}
+      >
         <button
           onClick={() => handleSectionLink("work")}
           className="hover:text-indigo-500 transition-colors cursor-pointer"
         >
           Work
         </button>
-        <Link to="/about" className="hover:text-indigo-500 transition-colors">
+        <Link
+          to="/about"
+          className={`hover:text-indigo-500 transition-colors ${scrolled ? "text-gray-500" : "text-white/80"}`}
+        >
           About
         </Link>
         <button
@@ -54,19 +61,13 @@ function Navbar() {
         >
           Skills
         </button>
-        <button
-          onClick={() => handleSectionLink("contact")}
-          className="hover:text-indigo-500 transition-colors cursor-pointer"
-        >
-          Contact
-        </button>
       </div>
 
       <button
         onClick={() => handleSectionLink("contact")}
-        className="bg-indigo-500 text-white px-5 py-2 rounded-full text-sm hover:bg-indigo-600 transition-colors cursor-pointer"
+        className="bg-indigo-500 font-medium text-white px-5 py-2 rounded-full text-sm hover:bg-indigo-600 transition-colors cursor-pointer"
       >
-        Let's Talk
+        Contact
       </button>
     </nav>
   );

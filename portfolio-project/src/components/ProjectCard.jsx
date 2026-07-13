@@ -8,12 +8,15 @@ function ProjectCard({
   category,
   categoryColor,
   image,
+  isCenter,
 }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      className="relative w-80 h-96 rounded-2xl overflow-hidden cursor-pointer flex-shrink-0"
+      className={`relative w-80 h-96 rounded-2xl overflow-hidden flex-shrink-0 ${
+        isCenter ? "cursor-default" : "cursor-pointer"
+      }`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -31,7 +34,9 @@ function ProjectCard({
 
       {/* Hover overlay */}
       <div
-        className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${hovered ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
+          hovered ? "opacity-100" : "opacity-0"
+        }`}
       />
 
       {/* Bottom content */}
@@ -43,23 +48,29 @@ function ProjectCard({
         </span>
         <h3 className="text-white font-bold text-xl leading-tight">{title}</h3>
         <p
-          className={`text-white/70 text-sm leading-relaxed transition-all duration-300 ${hovered ? "opacity-100 max-h-20" : "opacity-0 max-h-0"}`}
+          className={`text-white/70 text-sm leading-relaxed transition-all duration-300 ${
+            hovered ? "opacity-100 max-h-20" : "opacity-0 max-h-0"
+          }`}
         >
           {description}
         </p>
       </div>
 
-      {/* Explore button — now a real link */}
-      <div
-        className={`absolute top-6 right-6 transition-all duration-300 ${hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
-      >
-        <Link
-          to={`/project/${id}`}
-          className="bg-white text-gray-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-indigo-500 hover:text-white transition-colors inline-block"
+      {/* Explore button — only renders on the center card */}
+      {isCenter && (
+        <div
+          className={`absolute top-6 right-6 transition-all duration-300 ${
+            hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+          }`}
         >
-          Explore →
-        </Link>
-      </div>
+          <Link
+            to={`/project/${id}`}
+            className="bg-white text-gray-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-indigo-500 hover:text-white transition-colors inline-block cursor-pointer"
+          >
+            Explore →
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

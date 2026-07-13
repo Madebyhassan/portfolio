@@ -40,7 +40,12 @@ function Contact() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
         {/* ── LEFT — Info ── */}
         <div className="flex flex-col gap-6">
-          <p className="text-indigo-500 text-sm font-medium">Get In Touch</p>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-px bg-indigo-500" />
+            <span className="text-indigo-500 text-sm font-medium">
+              Get In Touch
+            </span>
+          </div>
           <h2 className="text-gray-900 text-4xl font-bold">
             Let's Work Together
           </h2>
@@ -56,9 +61,9 @@ function Contact() {
               href="mailto:Hassan_Al-Hashimi@hotmail.com"
               className="hover:text-indigo-500 hover:underline transition-colors"
             >
-              ✉️ Hassan_Al-Hashimi@hotmail.com
+              ✉️ Email
             </a>
-            <p>📍 Available Worldwide · Remote</p>
+            <p>📍 Available · Remote</p>
           </div>
 
           <div className="flex gap-3">
@@ -108,7 +113,7 @@ function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="John Smith"
-                  className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 outline-none focus:border-indigo-400 transition-colors"
+                  className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium placeholder:text-gray-400 outline-none focus:border-indigo-400 transition-colors"
                 />
               </div>
 
@@ -123,11 +128,8 @@ function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
-                  className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 outline-none focus:border-indigo-400 transition-colors"
+                  className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium placeholder:text-gray-400 outline-none focus:border-indigo-400 transition-colors"
                 />
-                <p className="text-xs text-gray-400">
-                  I'll get back to you within 24 hours
-                </p>
               </div>
 
               <div className="flex flex-col gap-1">
@@ -141,7 +143,7 @@ function Contact() {
                   required
                   placeholder="Tell me about your project..."
                   rows={5}
-                  className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 outline-none focus:border-indigo-400 transition-colors resize-none"
+                  className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium placeholder:text-gray-400 outline-none focus:border-indigo-400 transition-colors resize-none"
                 />
                 <p className="text-xs text-gray-400">
                   Feel free to be as detailed as you like

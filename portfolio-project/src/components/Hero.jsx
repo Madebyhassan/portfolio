@@ -104,17 +104,20 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="text-7xl font-extrabold text-white leading-none tracking-tight">
-            I Design,
-            <br />
-            Build <span className="text-indigo-500">&</span>
-            <br />
-            Ship with <span className="text-indigo-500">AI.</span>
+          <h1 className="font-extrabold text-white leading-none tracking-tight">
+            <span className="text-7xl text-white">From</span>{" "}
+            <span className="text-7xl text-indigo-500">Figma </span>{" "}
+            <span className="text-7xl text-white">to</span>{" "}
+            <span className="text-7xl text-indigo-500">Frontend</span>
           </h1>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-            I'm Hassan — a UX/UI Engineer with an architect's precision. I
-            design the experience, build the frontend, and ship with AI.
+          <p className="text-white/80 text-lg leading-relaxed max-w-md">
+            I'm Hassan, a UX/AI Engineer. I{" "}
+            <span className="text-indigo-500 font-bold">design</span> the
+            experience, <span className="text-indigo-500 font-bold">build</span>{" "}
+            the frontend, and integrate{" "}
+            <span className="text-indigo-500 font-bold">AI</span> to deliver
+            end-to-end products with speed and precision.
           </p>
 
           <div className="flex items-center gap-6">
@@ -134,7 +137,7 @@ function Hero() {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="text-white/50 text-sm font-medium hover:text-white transition-colors cursor-pointer"
+              className="text-white/80 text-sm font-medium hover:text-white transition-colors cursor-pointer"
             >
               Let's Talk →
             </button>
@@ -143,20 +146,20 @@ function Hero() {
           {/* Stats */}
           <div className="flex items-center gap-10 pt-8 border-t border-white/10">
             <div>
-              <div className="text-3xl font-extrabold text-white">
-                3<span className="text-indigo-500">+</span>
+              <div className="text-3xl font-extrabold text-indigo-500">
+                3<span className="text-white">+</span>
               </div>
-              <div className="text-xs text-gray-500 mt-1 leading-tight">
+              <div className="text-xs text-white/80 mt-1 leading-tight">
                 Years designing
                 <br />& building
               </div>
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div>
-              <div className="text-3xl font-extrabold text-white">
-                12<span className="text-indigo-500">+</span>
+              <div className="text-3xl font-extrabold text-indigo-500">
+                12<span className="text-white">+</span>
               </div>
-              <div className="text-xs text-gray-500 mt-1 leading-tight">
+              <div className="text-xs text-white/80 mt-1 leading-tight">
                 Projects
                 <br />
                 shipped
@@ -164,10 +167,10 @@ function Hero() {
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div>
-              <div className="text-3xl font-extrabold text-white">
-                5<span className="text-indigo-500">+</span>
+              <div className="text-3xl font-extrabold text-indigo-500">
+                5<span className="text-white">+</span>
               </div>
-              <div className="text-xs text-gray-500 mt-1 leading-tight">
+              <div className="text-xs text-white/80 mt-1 leading-tight">
                 AI tools
                 <br />
                 integrated

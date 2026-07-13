@@ -21,7 +21,12 @@ function About() {
           <div className="flex flex-col md:flex-row gap-16 items-start mt-8">
             {/* Photo placeholder */}
             <div className="w-64 h-80 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-sm flex-shrink-0">
-              Your Photo
+              <img
+                src="/home/Hassan Picture.png"
+                alt="Hassan Al-Hashimi"
+                className="h-full object-cover rounded-2xl"
+                style={{ objectPosition: "center 10%" }}
+              />
             </div>
 
             {/* Content */}

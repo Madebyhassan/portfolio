@@ -33,14 +33,11 @@ function Work() {
     center: "translate-x-0 scale-105 z-20 opacity-100",
     left: "-translate-x-[340px] scale-90 z-10 opacity-60",
     right: "translate-x-[340px] scale-90 z-10 opacity-60",
-    hidden: "translate-x-0 scale-75 z-0 opacity-0 cursor-pointer",
+    hidden: "translate-x-0 scale-75 z-0 opacity-0",
   };
 
   return (
-    <section
-      id="work"
-      className="relative px-12 py-20 bg-white overflow-hidden"
-    >
+    <section id="work" className="relative px-12 py-24 bg-white pb-32">
       {/* Section header */}
       <div className="text-center mb-14 pt-4 relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
@@ -58,9 +55,9 @@ function Work() {
         </p>
       </div>
 
-      {/* Carousel — unchanged */}
+      {/* Carousel */}
       <div
-        className="relative flex items-center justify-center h-130"
+        className="relative flex items-center justify-center h-130 overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -69,7 +66,12 @@ function Work() {
           return (
             <div
               key={project.id}
-              className={`absolute w-80 transition-all duration-500 ease-in-out ${positionStyles[position]}`}
+              className={`absolute w-80 transition-all duration-500 ease-in-out ${positionStyles[position]} ${
+                position !== "center" ? "cursor-pointer" : ""
+              }`}
+              onClick={
+                position !== "center" ? () => setActiveIndex(index) : undefined
+              }
             >
               <ProjectCard
                 id={project.id}
@@ -78,13 +80,14 @@ function Work() {
                 category={project.category}
                 categoryColor={project.categoryColor}
                 image={project.image}
+                isCenter={position === "center"}
               />
             </div>
           );
         })}
       </div>
 
-      {/* Arrow buttons + dots — unchanged */}
+      {/* Arrow buttons + dots */}
       <div className="flex items-center justify-center gap-6 mt-8">
         <button
           onClick={prev}
@@ -111,6 +114,21 @@ function Work() {
         >
           →
         </button>
+      </div>
+
+      {/* Wave divider into Skills section */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden z-10">
+        <svg
+          viewBox="0 0 1440 120"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style={{ display: "block", width: "100%", height: "80px" }}
+        >
+          <path
+            d="M0,90 C150,90 300,5 500,10 C680,15 780,90 950,85 C1100,80 1280,35 1440,70 L1440,120 L0,120 Z"
+            fill="#0A0A1B"
+          />
+        </svg>
       </div>
     </section>
   );
