@@ -1,16 +1,15 @@
 const services = [
   {
     id: "design",
-    icon: "🎨",
+    icon: "/icons/design-icon.svg",
     title: "Design",
     description:
       "From concept to high-fidelity UI — I design end-to-end products that are both beautiful and functional.",
     tools: [
       "Figma",
       "Design Systems",
-      "UI/UX Research",
+      "User Research",
       "Prototyping",
-      "User Flows",
       "Wireframing",
     ],
     accent: "rgba(99,102,241,0.15)",
@@ -18,7 +17,7 @@ const services = [
   },
   {
     id: "frontend",
-    icon: "⚡",
+    icon: "/icons/frontend-icon.svg",
     title: "Frontend",
     description:
       "I'm just as comfortable in frontend development as I am in Figma. This results in fewer compromises between design and code.",
@@ -28,7 +27,7 @@ const services = [
   },
   {
     id: "ai",
-    icon: "🤖",
+    icon: "/icons/ai-style2.svg",
     title: "AI Engineering",
     description:
       "I build products that integrate AI meaningfully, making the experience smarter and faster.",
@@ -97,11 +96,12 @@ function Skills() {
             }}
           >
             {/* Icon */}
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-              style={{ background: "rgba(255,255,255,0.06)" }}
-            >
-              {service.icon}
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3">
+              <img
+                src={service.icon}
+                alt={service.title}
+                className="w-16 h-16 object-contain"
+              />
             </div>
 
             {/* Title */}

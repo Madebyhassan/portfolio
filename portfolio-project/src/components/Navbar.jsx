@@ -41,25 +41,30 @@ function Navbar() {
       </Link>
 
       <div
-        className={`flex gap-10 text-sm transition-colors duration-300 ${scrolled ? "text-gray-500" : "text-white/80"}`}
+        className={`flex gap-10 text-sm font-medium transition-colors duration-300 ${scrolled ? "text-gray-500" : "text-white/80"}`}
       >
         <button
           onClick={() => handleSectionLink("work")}
-          className="hover:text-indigo-500 transition-colors cursor-pointer"
+          className="relative pb-1 hover:text-indigo-500 transition-colors cursor-pointer group"
         >
           Work
+          <span className="absolute bottom-0 left-0 h-[1.5px] w-full bg-indigo-500 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </button>
+
         <Link
           to="/about"
-          className={`hover:text-indigo-500 transition-colors ${scrolled ? "text-gray-500" : "text-white/80"}`}
+          className={`relative pb-1 hover:text-indigo-500 transition-colors group ${scrolled ? "text-gray-500" : "text-white/80"}`}
         >
           About
+          <span className="absolute bottom-0 left-0 h-[1.5px] w-full bg-indigo-500 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </Link>
+
         <button
           onClick={() => handleSectionLink("skills")}
-          className="hover:text-indigo-500 transition-colors cursor-pointer"
+          className="relative pb-1 hover:text-indigo-500 transition-colors cursor-pointer group"
         >
           Skills
+          <span className="absolute bottom-0 left-0 h-[1.5px] w-full bg-indigo-500 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </button>
       </div>
 

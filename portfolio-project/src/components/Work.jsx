@@ -16,7 +16,7 @@ function Work() {
         <h2 className="text-gray-900 text-5xl font-extrabold tracking-tight mb-4">
           Projects I've Built
         </h2>
-        <p className="text-gray-400 text-base max-w-md mx-auto leading-relaxed">
+        <p className="text-gray-500 text-base max-w-md mx-auto leading-relaxed">
           A collection of real products, unique ideas and end-to-end projects
         </p>
       </div>
@@ -108,7 +108,7 @@ function Work() {
                 </div>
               </div>
 
-              <p className="text-gray-400 text-sm leading-relaxed max-w-2xl">
+              <p className="text-gray-500 text-sm leading-relaxed max-w-2xl">
                 {project.summary}
               </p>
             </div>

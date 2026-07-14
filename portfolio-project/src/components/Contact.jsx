@@ -67,13 +67,37 @@ function Contact() {
           </div>
 
           <div className="flex gap-3">
-            {["LinkedIn", "Github", "Discord"].map((platform) => (
-              <button
-                key={platform}
-                className="px-5 py-2 border border-gray-200 rounded-full text-sm text-gray-600 hover:border-indigo-400 hover:text-indigo-500 transition-colors cursor-pointer"
+            {[
+              {
+                name: "LinkedIn",
+                icon: "/icons/linkedin.png",
+                href: "https://www.linkedin.com/in/hassan-alhashimi/",
+              },
+              {
+                name: "GitHub",
+                icon: "/icons/github.png",
+                href: "https://github.com/Madebyhassan",
+              },
+              {
+                name: "Discord",
+                icon: "/icons/discord.png",
+                href: "https://discord.com/users/581151101202464778",
+              },
+            ].map((platform) => (
+              <a
+                key={platform.name}
+                href={platform.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm text-gray-600 hover:border-indigo-400 hover:text-indigo-500 transition-colors"
               >
-                {platform}
-              </button>
+                <img
+                  src={platform.icon}
+                  alt={platform.name}
+                  className="w-4 h-4 object-contain"
+                />
+                {platform.name}
+              </a>
             ))}
           </div>
         </div>
@@ -141,7 +165,7 @@ function Contact() {
                   value={form.message}
                   onChange={handleChange}
                   required
-                  placeholder="Tell me about your project..."
+                  placeholder="Write your message here..."
                   rows={5}
                   className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium placeholder:text-gray-400 outline-none focus:border-indigo-400 transition-colors resize-none"
                 />

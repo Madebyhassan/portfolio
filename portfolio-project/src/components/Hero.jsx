@@ -105,9 +105,9 @@ function Hero() {
           </div>
 
           <h1 className="font-extrabold text-white leading-none tracking-tight">
-            <span className="text-7xl text-white">From</span>{" "}
+            <span className="text-7xl text-white">From </span>{" "}
             <span className="text-7xl text-indigo-500">Figma </span>{" "}
-            <span className="text-7xl text-white">to</span>{" "}
+            <span className="text-7xl text-white">to </span>{" "}
             <span className="text-7xl text-indigo-500">Frontend</span>
           </h1>
 
