@@ -12,7 +12,7 @@ const projects = [
     categoryColor: "bg-indigo-100 text-indigo-500",
     accent: "#7C3AED",
     heroBg: "#0D0520",
-    image: "/cozmos/Cozmos-PC.png",
+    image: "/cozmos/Cozmos.png",
     summary:
       "A social platform for content creators — connecting influencers with brands authentically, without sacrificing their personal voice.",
     role: "UX Design · Brand Design",
@@ -85,7 +85,7 @@ const projects = [
     categoryColor: "bg-emerald-100 text-emerald-600",
     accent: "#6366F1",
     heroBg: "#0A0A1B",
-    image: "/ux-app/UX Assistant Mockup 1.svg",
+    image: "/ux-app/UX Assistant.png",
     summary:
       "An AI-powered design analysis tool that tests UI/UX submissions against a curated rubric of 50+ established principles — delivering structured, source-cited feedback in seconds.",
     role: "UI/UX Design · Frontend Dev · AI Engineering",
@@ -174,7 +174,7 @@ const projects = [
     categoryColor: "bg-pink-100 text-pink-500",
     accent: "#EC4899",
     heroBg: "#1A0510",
-    image: "monaa/Monaa Project Card Design New.svg",
+    image: "monaa/Monaa-full.png",
     summary:
       "A women's health app helping users manage PCOS symptoms through intelligent habit tracking — improving overall user engagement by 15%.",
     role: "UX Designer",
@@ -244,7 +244,7 @@ const projects = [
     categoryColor: "bg-yellow-100 text-yellow-600",
     accent: "#D97706",
     heroBg: "#0D0800",
-    image: "/max-aspire/MAX-aspire-mockup.svg",
+    image: "/max-aspire/MAX Aspire.png",
     summary:
       "A professional networking platform for the Muslim community — connecting aspiring professionals with jobs, mentors, and communities to collaborate, grow, and belong.",
     role: "UI/UX Design",

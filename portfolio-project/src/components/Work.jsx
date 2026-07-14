@@ -1,45 +1,11 @@
-import { useState } from "react";
-import ProjectCard from "./ProjectCard";
+import { Link } from "react-router-dom";
 import projects from "../data/projects";
 
 function Work() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-
-  const prev = () =>
-    setActiveIndex((i) => (i === 0 ? projects.length - 1 : i - 1));
-  const next = () =>
-    setActiveIndex((i) => (i === projects.length - 1 ? 0 : i + 1));
-
-  const handleTouchStart = (e) => setTouchStart(e.touches[0].clientX);
-  const handleTouchEnd = (e) => {
-    if (!touchStart) return;
-    const diff = touchStart - e.changedTouches[0].clientX;
-    if (diff > 50) next();
-    if (diff < -50) prev();
-    setTouchStart(null);
-  };
-
-  const getPosition = (index) => {
-    const total = projects.length;
-    const diff = (index - activeIndex + total) % total;
-    if (diff === 0) return "center";
-    if (diff === 1) return "right";
-    if (diff === total - 1) return "left";
-    return "hidden";
-  };
-
-  const positionStyles = {
-    center: "translate-x-0 scale-105 z-20 opacity-100",
-    left: "-translate-x-[340px] scale-90 z-10 opacity-60",
-    right: "translate-x-[340px] scale-90 z-10 opacity-60",
-    hidden: "translate-x-0 scale-75 z-0 opacity-0",
-  };
-
   return (
     <section id="work" className="relative px-12 py-24 bg-white pb-32">
       {/* Section header */}
-      <div className="text-center mb-14 pt-4 relative z-10">
+      <div className="text-center mb-16 pt-4 relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="w-8 h-px bg-indigo-500" />
           <span className="text-indigo-500 text-xs font-semibold tracking-[0.2em] uppercase">
@@ -55,65 +21,99 @@ function Work() {
         </p>
       </div>
 
-      {/* Carousel */}
-      <div
-        className="relative flex items-center justify-center h-130 overflow-hidden"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        {projects.map((project, index) => {
-          const position = getPosition(index);
-          return (
+      {/* Project list */}
+      <div className="max-w-5xl mx-auto flex flex-col gap-6">
+        {projects.map((project, index) => (
+          <Link
+            key={project.id}
+            to={`/project/${project.id}`}
+            className="group relative rounded-2xl overflow-hidden flex flex-col"
+            style={{ height: "500px" }}
+          >
+            {/* Left accent border — full card height */}
             <div
-              key={project.id}
-              className={`absolute w-80 transition-all duration-500 ease-in-out ${positionStyles[position]} ${
-                position !== "center" ? "cursor-pointer" : ""
-              }`}
-              onClick={
-                position !== "center" ? () => setActiveIndex(index) : undefined
-              }
-            >
-              <ProjectCard
-                id={project.id}
-                title={project.title}
-                description={project.summary}
-                category={project.category}
-                categoryColor={project.categoryColor}
-                image={project.image}
-                isCenter={position === "center"}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Arrow buttons + dots */}
-      <div className="flex items-center justify-center gap-6 mt-8">
-        <button
-          onClick={prev}
-          className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-indigo-400 hover:text-indigo-500 transition-colors cursor-pointer"
-        >
-          ←
-        </button>
-
-        <div className="flex gap-2">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                index === activeIndex ? "bg-indigo-500 w-6" : "bg-gray-300"
-              }`}
+              className="absolute left-0 top-0 bottom-0 w-1 z-20 transition-all duration-300 group-hover:w-[3px]"
+              style={{ background: project.accent || "#6366F1" }}
             />
-          ))}
-        </div>
 
-        <button
-          onClick={next}
-          className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-indigo-400 hover:text-indigo-500 transition-colors cursor-pointer"
-        >
-          →
-        </button>
+            {/* ── IMAGE SECTION ── */}
+            <div className="relative flex-1 overflow-hidden">
+              {/* Background */}
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : (
+                <div
+                  className="absolute inset-0"
+                  style={{ background: project.heroBg || "#0D0520" }}
+                />
+              )}
+
+              {/* Base overlay */}
+              <div className="absolute inset-0" />
+
+              {/* Hover overlay — fades image back */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: "rgba(0,0,0,0.60)" }}
+              />
+
+              {/* Year — top right, fades on hover */}
+              <span className="absolute top-7 right-8 text-white/40 text-sm font-medium group-hover:opacity-0 transition-opacity duration-200 z-10">
+                {project.year}
+              </span>
+
+              {/* Number — top left, appears on hover */}
+              <span
+                className="absolute top-6 left-8 text-8xl font-extrabold leading-none select-none opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
+                style={{ color: project.accent || "#6366F1" }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              {/* Tool pills — bottom of image, appear on hover */}
+              <div className="absolute bottom-6 left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-75 z-10">
+                {project.tools.slice(0, 3).map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-3 py-1 rounded-full text-xs font-medium border border-white/20 text-white/80"
+                    style={{ background: "rgba(255,255,255,0.1)" }}
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* ── WHITE TEXT SECTION ── */}
+            <div className="bg-white px-8 py-6 flex flex-col gap-2 shrink-0">
+              <span
+                className={`w-fit px-3 py-1 rounded-full text-xs font-medium ${project.categoryColor}`}
+              >
+                {project.category}
+              </span>
+
+              <div className="flex items-center justify-between gap-4">
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-indigo-500 transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <div
+                  className="text-xl shrink-0 opacity-30 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
+                  style={{ color: project.accent || "#6366F1" }}
+                >
+                  →
+                </div>
+              </div>
+
+              <p className="text-gray-400 text-sm leading-relaxed max-w-2xl">
+                {project.summary}
+              </p>
+            </div>
+          </Link>
+        ))}
       </div>
 
       {/* Wave divider into Skills section */}

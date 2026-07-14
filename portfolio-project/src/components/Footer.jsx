@@ -3,11 +3,13 @@ function Footer() {
     <footer className="bg-white border-t border-gray-100 py-8 px-12">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Left — name */}
-        <span className="text-indigo-500 font-bold text-lg">Hassan</span>
+        <span className="text-indigo-500 font-bold text-lg">
+          Hassan Al-Hashimi
+        </span>
 
         {/* Center — credit */}
         <p className="text-gray-400 text-sm">
-          Designed & built by Hassan · {new Date().getFullYear()}
+          Designed & built by Hassan Al-Hashimi · {new Date().getFullYear()}
         </p>
 
         {/* Right — back to top */}
