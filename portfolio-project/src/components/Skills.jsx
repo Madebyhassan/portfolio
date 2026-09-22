@@ -47,7 +47,7 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="relative px-12 py-24 pb-48"
+      className="relative px-6 md:px-12 py-20 md:py-24 pb-36 md:pb-48"
       style={{ background: "#0A0A1B" }}
     >
       {/* Background glows */}
@@ -67,7 +67,7 @@ function Skills() {
       />
 
       {/* Section header */}
-      <div className="text-center mb-16 relative z-10">
+      <div className="text-center mb-12 md:mb-16 relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="w-8 h-px bg-indigo-500" />
           <span className="text-indigo-400 text-xs font-semibold tracking-[0.2em] uppercase">
@@ -75,21 +75,21 @@ function Skills() {
           </span>
           <div className="w-8 h-px bg-indigo-500" />
         </div>
-        <h2 className="text-white text-5xl font-extrabold tracking-tight mb-4">
+        <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
           Skills & Services
         </h2>
-        <p className="text-gray-400 text-base max-w-md mx-auto leading-relaxed">
+        <p className="text-gray-400 text-sm md:text-base max-w-md mx-auto leading-relaxed">
           Design, engineering, and AI in one person. Less back and forth, more
           shipped product.
         </p>
       </div>
 
-      {/* Service cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-3 gap-6 relative z-10">
+      {/* Service cards — 1 col mobile, 2 col tablet, 3 col desktop */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 relative z-10">
         {services.map((service) => (
           <div
             key={service.id}
-            className="rounded-2xl p-8 flex flex-col gap-5 transition-transform duration-300 hover:-translate-y-1"
+            className="rounded-2xl p-6 md:p-8 flex flex-col gap-5 transition-transform duration-300 hover:-translate-y-1"
             style={{
               background: service.accent,
               border: `1px solid ${service.border}`,
@@ -100,7 +100,7 @@ function Skills() {
               <img
                 src={service.icon}
                 alt={service.title}
-                className="w-16 h-16 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain"
               />
             </div>
 
@@ -132,7 +132,7 @@ function Skills() {
       </div>
 
       {/* Bottom wave into Contact section */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden z-">
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden z-10">
         <svg
           viewBox="0 0 1440 120"
           xmlns="http://www.w3.org/2000/svg"

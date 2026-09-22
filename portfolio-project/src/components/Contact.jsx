@@ -36,17 +36,20 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="px-12 py-24 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section id="contact" className="px-6 md:px-12 py-16 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
         {/* ── LEFT — Info ── */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col items-center text-center md:items-start md:text-left gap-6">
+          {/* Eyebrow — dash both sides on mobile, left only on desktop */}
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-px bg-indigo-500" />
             <span className="text-indigo-500 text-sm font-medium">
               Get In Touch
             </span>
+            <div className="w-8 h-px bg-indigo-500 md:hidden" />
           </div>
-          <h2 className="text-gray-900 text-4xl font-bold">
+
+          <h2 className="text-gray-900 text-3xl md:text-4xl font-bold">
             Let's Work Together
           </h2>
           <p className="text-gray-400 text-base leading-relaxed">
@@ -54,8 +57,9 @@ function Contact() {
             I'll get back to you within 24 hours.
           </p>
 
-          <hr className="border-gray-100" />
+          <hr className="border-gray-100 w-full" />
 
+          {/* Email + location — stacked on mobile, unchanged on desktop */}
           <div className="flex flex-col gap-3 text-sm text-gray-600">
             <a
               href="mailto:Hassan_Al-Hashimi@hotmail.com"
@@ -66,7 +70,8 @@ function Contact() {
             <p>📍 Available · Remote</p>
           </div>
 
-          <div className="flex gap-3">
+          {/* Social pills — stacked + centered + larger on mobile, row on desktop */}
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full md:w-auto">
             {[
               {
                 name: "LinkedIn",
@@ -89,12 +94,12 @@ function Contact() {
                 href={platform.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm text-gray-600 hover:border-indigo-400 hover:text-indigo-500 transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 md:px-4 md:py-2 border border-gray-200 rounded-full text-base md:text-sm text-gray-600 hover:border-indigo-400 hover:text-indigo-500 transition-colors w-full md:w-auto max-w-xs"
               >
                 <img
                   src={platform.icon}
                   alt={platform.name}
-                  className="w-4 h-4 object-contain"
+                  className="w-5 h-5 md:w-4 md:h-4 object-contain"
                 />
                 {platform.name}
               </a>
