@@ -269,9 +269,9 @@ function ProjectDetail() {
 
       {/* ── TOOLS ── */}
       {project.tools?.length > 0 && (
-        <section className="px-20 py-16 bg-gray-50 border-b border-gray-200">
-          <div className="max-w-6xl mx-auto flex items-center gap-12">
-            <div className="min-w-[140px]">
+        <section className="px-6 md:px-20 py-12 md:py-16 bg-gray-50 border-b border-gray-200">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-12">
+            <div className="min-w-0 md:min-w-[140px] text-center md:text-left">
               <p
                 className="text-sm font-semibold mb-1"
                 style={{ color: accent }}
@@ -280,7 +280,7 @@ function ProjectDetail() {
               </p>
               <h3 className="text-xl font-bold text-gray-900">Built with</h3>
             </div>
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap justify-center md:justify-start gap-2.5">
               {project.tools.map((tool, i) => (
                 <span
                   key={tool}
@@ -309,15 +309,15 @@ function ProjectDetail() {
 
       {/* ── PROCESS ── */}
       {project.process?.length > 0 && (
-        <section className="px-20 py-20 bg-white border-b border-gray-200">
+        <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-b border-gray-200">
           <div className="max-w-6xl mx-auto">
             <p className="text-sm font-semibold mb-3" style={{ color: accent }}>
               Process
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-12">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 md:mb-12">
               How I got there
             </h2>
-            <div className="flex flex-col gap-32">
+            <div className="flex flex-col gap-16 md:gap-32">
               {project.process.map((step, i) => (
                 <div key={i} className="flex flex-col gap-6">
                   {step.layout === "sideImage" ? (
