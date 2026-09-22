@@ -608,7 +608,7 @@ function ProjectDetail() {
 
                   {/* The Gap — full-width subsection, only when present */}
                   {step.gap && (
-                    <div className="pl-[104px] mt-6">
+                    <div className="pl-0 md:pl-[104px] mt-6">
                       <h4 className="text-md font-semibold text-gray-900 mb-4">
                         {step.gap.subheading}
                       </h4>
@@ -631,9 +631,9 @@ function ProjectDetail() {
                   {step.layout === "row" &&
                   step.images?.length === 1 &&
                   step.imageMaxWidth ? (
-                    <div className="pl-[104px] mt-6">
+                    <div className="pl-0 md:pl-[104px] mt-6">
                       <div
-                        className="rounded-xl overflow-hidden cursor-pointer"
+                        className="rounded-xl overflow-hidden cursor-pointer w-full"
                         style={{ maxWidth: step.imageMaxWidth }}
                         onClick={() => setModalImage(step.images[0])}
                       >
@@ -646,7 +646,7 @@ function ProjectDetail() {
                     </div>
                   ) : (
                     step.layout === "row" && (
-                      <div className="flex flex-col gap-5 pl-[104px]">
+                      <div className="flex flex-col gap-5 pl-0 md:pl-[104px]">
                         {step.images?.map((img, imgIndex) => (
                           <div key={imgIndex} className="flex flex-col gap-2">
                             {!step.hideLabels && (
@@ -672,11 +672,11 @@ function ProjectDetail() {
 
                   {/* Quote + illustration pairs — ONLY for quotes layout */}
                   {step.layout === "quotes" && (
-                    <div className="flex flex-col gap-8 pl-[104px]">
+                    <div className="flex flex-col gap-8 pl-0 md:pl-[104px]">
                       {step.quotes?.map((item, qIndex) => (
                         <div
                           key={qIndex}
-                          className="flex flex-row items-center gap-5"
+                          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5"
                         >
                           <img
                             src={item.image}
@@ -684,7 +684,7 @@ function ProjectDetail() {
                             className="w-24 h-24 object-contain shrink-0"
                           />
                           <p
-                            className="italic text-lg leading-relaxed max-w-xl"
+                            className="italic text-lg leading-relaxed max-w-xl text-center sm:text-left"
                             style={{ color: accent }}
                           >
                             "{item.quote}"
@@ -694,12 +694,12 @@ function ProjectDetail() {
                     </div>
                   )}
                   {step.subheading && (
-                    <h4 className="text-md font-medium text-gray-900 mb-4 pl-[104px]">
+                    <h4 className="text-md font-medium text-gray-900 mb-4 pl-0 md:pl-[104px]">
                       {step.subheading}
                     </h4>
                   )}
                   {step.problemPoints?.length > 0 && (
-                    <div className="grid grid-cols-2 gap-4 pl-[104px]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-0 md:pl-[104px]">
                       {step.problemPoints.map((point, pIndex) => (
                         <div
                           key={pIndex}
