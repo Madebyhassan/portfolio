@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import projects from "../data/projects";
 
+const visibleProjects = projects.filter((p) => !p.hidden);
+
 function Work() {
   return (
     <section id="work" className="relative px-12 py-24 bg-white pb-32">
@@ -23,7 +25,7 @@ function Work() {
 
       {/* Project list */}
       <div className="max-w-5xl mx-auto flex flex-col gap-6">
-        {projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <Link
             key={project.id}
             to={`/project/${project.id}`}

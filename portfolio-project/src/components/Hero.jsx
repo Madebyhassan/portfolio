@@ -196,7 +196,7 @@ function Hero() {
             style={{ aspectRatio: "4/5" }}
           >
             <img
-              src="/home/Hassan Picture.png"
+              src="/home/hassan-picture.png"
               alt="Hassan Al-Hashimi"
               className="w-full h-full object-cover"
               style={{ objectPosition: "center 10%" }}

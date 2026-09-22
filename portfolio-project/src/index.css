@@ -24,3 +24,8 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
+
+.highlight {
+  color: var(--highlight-color);
+  font-weight: 600;
+}
