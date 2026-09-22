@@ -56,13 +56,13 @@ function ProjectDetail() {
 
       {/* ── HERO ── */}
       <section
-        className="px-20 pt-40 pb-24 relative overflow-hidden"
+        className="px-6 md:px-20 pt-28 md:pt-40 pb-16 md:pb-24 relative overflow-hidden"
         style={{ background: heroBg }}
       >
         {/* Back to Work — floats over hero */}
         <Link
           to="/"
-          className="absolute top-24 left-20 text-sm text-white/50 hover:text-white transition-colors z-20 flex items-center gap-1.5"
+          className="absolute top-20 left-6 md:top-24 md:left-20 text-sm text-white/50 hover:text-white transition-colors z-20 flex items-center gap-1.5"
         >
           ← Back to Work
         </Link>
@@ -77,7 +77,7 @@ function ProjectDetail() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Category badge */}
-          <div className="inline-flex items-center gap-2 border border-white/20 bg-white/10 text-white/70 text-xs font-medium px-4 py-1.5 rounded-full mb-7">
+          <div className="inline-flex items-center gap-2 border border-white/20 bg-white/10 text-white/70 text-xs font-medium px-4 py-1.5 rounded-full mb-6 md:mb-7">
             <span
               className="w-1.5 h-1.5 rounded-full"
               style={{ background: accent }}
@@ -86,19 +86,19 @@ function ProjectDetail() {
           </div>
 
           {/* Giant title */}
-          <h1 className="text-7xl md:text-8xl font-extrabold text-white leading-none tracking-tight mb-8">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none tracking-tight mb-6 md:mb-8">
             {project.title.toUpperCase()}
           </h1>
 
           {/* Summary */}
-          <p className="text-white/60 text-lg max-w-xl leading-relaxed mb-12">
+          <p className="text-white/60 text-base md:text-lg max-w-xl leading-relaxed mb-8 md:mb-12">
             {project.summary}
           </p>
 
-          {/* Meta strip */}
-          <div className="flex flex-wrap border-t border-white/10">
+          {/* Meta strip — single column stack on mobile, horizontal on desktop */}
+          <div className="flex flex-col md:flex-row md:flex-wrap border-t border-white/10">
             {project.role && (
-              <div className="pr-10 mr-10 border-r border-white/10 py-7">
+              <div className="md:pr-10 md:mr-10 border-b md:border-b-0 md:border-r border-white/10 py-5 md:py-7">
                 <p className="text-[11px] font-semibold text-white/35 uppercase tracking-widest mb-1.5">
                   My Role
                 </p>
@@ -108,7 +108,7 @@ function ProjectDetail() {
               </div>
             )}
             {project.tools?.length > 0 && (
-              <div className="pr-10 mr-10 border-r border-white/10 py-7">
+              <div className="md:pr-10 md:mr-10 border-b md:border-b-0 md:border-r border-white/10 py-5 md:py-7">
                 <p className="text-[11px] font-semibold text-white/35 uppercase tracking-widest mb-2">
                   Tools Used
                 </p>
@@ -125,7 +125,7 @@ function ProjectDetail() {
               </div>
             )}
             {project.company && (
-              <div className="pr-10 mr-10 border-r border-white/10 py-7">
+              <div className="md:pr-10 md:mr-10 border-b md:border-b-0 md:border-r border-white/10 py-5 md:py-7">
                 <p className="text-[11px] font-semibold text-white/35 uppercase tracking-widest mb-1.5">
                   Company
                 </p>
@@ -134,7 +134,7 @@ function ProjectDetail() {
                 </p>
               </div>
             )}
-            <div className="py-7">
+            <div className="py-5 md:py-7">
               <p className="text-[11px] font-semibold text-white/35 uppercase tracking-widest mb-1.5">
                 Location
               </p>
@@ -145,7 +145,7 @@ function ProjectDetail() {
           </div>
 
           {/* CTAs */}
-          <div className="flex gap-3 border-t border-white/10 py-7">
+          <div className="flex gap-3 border-t border-white/10 py-6 md:py-7">
             {project.liveUrl ? (
               <a
                 href={project.liveUrl}
@@ -189,13 +189,13 @@ function ProjectDetail() {
       </div>
 
       {/* ── OVERVIEW ── */}
-      <section className="px-20 py-20 bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 gap-20 items-start">
+      <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-b border-gray-200">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
           <div>
             <p className="text-sm font-semibold mb-3" style={{ color: accent }}>
               Overview
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6">
               What this project is about
             </h2>
             {project.overview.map((para, i) => (
@@ -205,24 +205,24 @@ function ProjectDetail() {
             ))}
           </div>
           {project.stats?.length > 0 && (
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 w-full">
               {project.stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="bg-gray-50 border border-gray-200 rounded-2xl p-6 relative overflow-hidden"
+                  className="bg-gray-50 border border-gray-200 rounded-2xl p-4 md:p-6 relative overflow-hidden"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px] opacity-60"
                     style={{ background: accent }}
                   />
                   <div
-                    className="text-[40px] font-extrabold leading-none mb-1.5"
+                    className="text-[28px] md:text-[40px] font-extrabold leading-none mb-1.5"
                     style={{ color: accent }}
                   >
                     {stat.number}
                     <span className="text-gray-900">{stat.suffix}</span>
                   </div>
-                  <div className="text-sm text-gray-500 font-medium leading-tight">
+                  <div className="text-xs md:text-sm text-gray-500 font-medium leading-tight">
                     {stat.label}
                   </div>
                 </div>
@@ -234,19 +234,19 @@ function ProjectDetail() {
 
       {/* ── WHAT I DID ── */}
       {project.contributions?.length > 0 && (
-        <section className="px-20 py-20 bg-gray-50">
+        <section className="px-6 md:px-20 py-16 md:py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <p className="text-sm font-semibold mb-3" style={{ color: accent }}>
               What I Did
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-12">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 md:mb-12">
               My contributions
             </h2>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {project.contributions.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
+                  className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm"
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-5"
