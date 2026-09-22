@@ -322,27 +322,35 @@ function ProjectDetail() {
                 <div key={i} className="flex flex-col gap-6">
                   {step.layout === "sideImage" ? (
                     <div
-                      className="grid gap-10 items-start"
+                      className="grid grid-cols-1 md:grid-cols-[64px_1fr_var(--side-image-w)] gap-4 md:gap-10 items-start"
                       style={{
-                        gridTemplateColumns: `64px 1fr ${step.imageMaxWidth || "280px"}`,
+                        "--side-image-w": step.imageMaxWidth || "280px",
                       }}
                     >
                       <div
-                        className="text-xs font-bold uppercase tracking-widest pt-1"
+                        className="hidden md:block text-xs font-bold uppercase tracking-widest pt-1"
                         style={{ color: accent }}
                       >
                         {String(i + 1).padStart(2, "0")}
                       </div>
 
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2.5">
-                          {step.title}
-                        </h3>
+                        <div className="flex items-baseline gap-3 md:block mb-2.5">
+                          <span
+                            className="md:hidden text-xs font-bold uppercase tracking-widest"
+                            style={{ color: accent }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900 md:mb-2.5">
+                            {step.title}
+                          </h3>
+                        </div>
                         <Description text={step.description} />
 
                         {/* Columns subsection sits inside this same left column */}
                         {step.columns && (
-                          <div className="mt-6 grid grid-cols-2 gap-10">
+                          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                             <div>
                               <span
                                 className="inline-block text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-4"
@@ -397,10 +405,10 @@ function ProjectDetail() {
                         )}
                       </div>
 
-                      {/* Right column — the vertical process image */}
+                      {/* Right column on desktop, full-width block on mobile — the vertical process image */}
                       {step.images?.[0] && (
                         <div
-                          className="rounded-xl overflow-hidden cursor-pointer"
+                          className="rounded-xl overflow-hidden cursor-pointer w-full md:w-auto"
                           onClick={() => setModalImage(step.images[0])}
                         >
                           <img
@@ -413,39 +421,51 @@ function ProjectDetail() {
                     </div>
                   ) : step.layout === "row" || step.layout === "quotes" ? (
                     /* ── TEXT-ONLY TOP: used by row and quotes layouts ── */
-                    <div
-                      className="grid gap-10 items-start"
-                      style={{ gridTemplateColumns: "64px 1fr" }}
-                    >
+                    <div className="grid grid-cols-1 md:grid-cols-[64px_1fr] gap-4 md:gap-10 items-start">
                       <div
-                        className="text-xs font-bold uppercase tracking-widest pt-1"
+                        className="hidden md:block text-xs font-bold uppercase tracking-widest pt-1"
                         style={{ color: accent }}
                       >
                         {String(i + 1).padStart(2, "0")}
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2.5">
-                          {step.title}
-                        </h3>
+                        <div className="flex items-baseline gap-3 md:block mb-2.5">
+                          <span
+                            className="md:hidden text-xs font-bold uppercase tracking-widest"
+                            style={{ color: accent }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900 md:mb-2.5">
+                            {step.title}
+                          </h3>
+                        </div>
                         <Description text={step.description} />
                       </div>
                     </div>
                   ) : (
                     /* ── DEFAULT LAYOUT: 3-column grid, image on the right ── */
-                    <div
-                      className="grid gap-10 items-start"
-                      style={{ gridTemplateColumns: "64px 1fr 1fr" }}
-                    >
+                    <div className="grid grid-cols-1 md:grid-cols-[64px_1fr_1fr] gap-4 md:gap-10 items-start">
+                      {/* Number — own column on desktop; inline with title on mobile */}
                       <div
-                        className="text-xs font-bold uppercase tracking-widest pt-1"
+                        className="hidden md:block text-xs font-bold uppercase tracking-widest pt-1"
                         style={{ color: accent }}
                       >
                         {String(i + 1).padStart(2, "0")}
                       </div>
+
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2.5">
-                          {step.title}
-                        </h3>
+                        <div className="flex items-baseline gap-3 md:block mb-2.5">
+                          <span
+                            className="md:hidden text-xs font-bold uppercase tracking-widest"
+                            style={{ color: accent }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900 md:mb-2.5">
+                            {step.title}
+                          </h3>
+                        </div>
                         <Description text={step.description} />
 
                         {/* Interview stat — now sits inside the text column */}
@@ -527,7 +547,7 @@ function ProjectDetail() {
 
                       {step.images?.length === 1 ? (
                         <div
-                          className="rounded-xl overflow-hidden cursor-pointer"
+                          className="rounded-xl overflow-hidden cursor-pointer w-full"
                           style={
                             step.imageMaxWidth
                               ? { maxWidth: step.imageMaxWidth }
@@ -542,7 +562,7 @@ function ProjectDetail() {
                           />
                         </div>
                       ) : (
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 w-full">
                           <div className="grid grid-cols-2 gap-3">
                             {[0, 1].map((imgIndex) => (
                               <div
