@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // About page has a light background from the top, so the navbar
+  // needs to always render in its "scrolled" (dark text) styling there,
+  // regardless of actual scroll position.
+  const forceLight = location.pathname === "/about";
+  const isDark = scrolled || forceLight;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -30,23 +37,24 @@ function Navbar() {
     }
   };
 
+  const handleLogoClick = () => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-300 ${
-          scrolled
+          isDark
             ? "bg-white/60 backdrop-blur-md border-b border-gray-200/50 shadow-sm"
             : "bg-transparent"
         }`}
       >
         {/* Logo */}
-        <Link
-          to="/"
-          className="flex items-center"
-          onClick={() => setMenuOpen(false)}
-        >
+        <Link to="/" className="flex items-center" onClick={handleLogoClick}>
           <img
-            src={scrolled ? "/home/logo-dark.svg" : "/home/logo-light.svg"}
+            src={isDark ? "/home/logo-dark.svg" : "/home/logo-light.svg"}
             alt="Hassan Al-Hashimi"
             className="h-12 md:h-20 w-auto transition-opacity duration-300"
           />
@@ -54,7 +62,7 @@ function Navbar() {
 
         {/* Desktop nav links — hidden on mobile */}
         <div
-          className={`hidden md:flex gap-10 text-sm font-medium transition-colors duration-300 ${scrolled ? "text-gray-300" : "text-white/80"}`}
+          className={`hidden md:flex gap-10 text-sm font-medium transition-colors duration-300 ${isDark ? "text-indigo-900" : "text-white/80"}`}
         >
           <button
             onClick={() => handleSectionLink("work")}
@@ -66,7 +74,7 @@ function Navbar() {
 
           <Link
             to="/about"
-            className={`relative pb-1 hover:text-indigo-500 transition-colors group ${scrolled ? "text-gray-300" : "text-white/80"}`}
+            className={`relative pb-1 hover:text-indigo-500 transition-colors group ${isDark ? "text-indigo-900" : "text-white/80"}`}
           >
             About
             <span className="absolute bottom-0 left-0 h-[1.5px] w-full bg-indigo-500 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
@@ -92,7 +100,7 @@ function Navbar() {
         {/* Hamburger — visible only on mobile */}
         <button
           onClick={() => setMenuOpen(true)}
-          className={`md:hidden flex flex-col items-end gap-1.5 w-8 h-8 justify-center cursor-pointer ${scrolled ? "text-gray-700" : "text-white"}`}
+          className={`md:hidden flex flex-col items-end gap-1.5 w-8 h-8 justify-center cursor-pointer ${isDark ? "text-gray-700" : "text-white"}`}
           aria-label="Open menu"
         >
           <span className="block w-6 h-[2px] bg-current rounded-full" />

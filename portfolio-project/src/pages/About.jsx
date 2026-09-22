@@ -67,7 +67,7 @@ function About() {
     <div>
       <Navbar />
 
-      <section className="px-12 py-24 bg-gray-100 min-h-screen">
+      <section className="px-6 md:px-12 pt-28 md:pt-36 pb-16 md:pb-24 bg-gray-100 min-h-screen">
         <div className="max-w-4xl mx-auto">
           {/* Back link */}
           <Link
@@ -78,9 +78,9 @@ function About() {
           </Link>
 
           {/* Header */}
-          <div className="flex flex-col md:flex-row gap-16 items-start mt-8">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start mt-8">
             {/* Photo + rotating title, as one unit */}
-            <div className="w-64 flex flex-col items-center gap-4 flex-shrink-0">
+            <div className="w-64 flex flex-col items-center gap-4 flex-shrink-0 mb-12 md:mb-0">
               <div className="w-64 h-80 rounded-2xl overflow-hidden">
                 <img
                   src="/about/imgmain.png"
@@ -93,9 +93,9 @@ function About() {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left gap-6">
               <p className="text-indigo-500 text-sm font-medium">About Me</p>
-              <h1 className="text-4xl font-bold text-gray-900">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
                 Designing & Building with AI
               </h1>
               <p className="text-gray-500 leading-relaxed">
@@ -120,7 +120,7 @@ function About() {
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-3 mt-2">
+              <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-2">
                 {[
                   "Architecture",
                   "UX/UI Design",
@@ -145,17 +145,20 @@ function About() {
         </div>
       </section>
 
-      <section className="px-12 py-24 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="px-6 md:px-12 py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center md:items-start md:text-left">
           <p className="text-indigo-500 text-sm font-medium mb-3">Outside UX</p>
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-10 md:mb-12">
             Life beyond the screen
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
             {outsideLife.map((item) => (
-              <div key={item.title} className="flex flex-col gap-3">
+              <div
+                key={item.title}
+                className="flex flex-col items-center text-center md:items-start md:text-left gap-3"
+              >
                 <div
-                  className="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
+                  className="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer w-full"
                   onClick={() => setModalImage(item.image)}
                 >
                   <img
