@@ -724,23 +724,23 @@ function ProjectDetail() {
       )}
 
       {/* ── FINAL WORK ── */}
-      <section className="px-20 py-20 bg-white border-b border-gray-200">
+      <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold mb-3" style={{ color: accent }}>
             Final Work
           </p>
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-12">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 md:mb-12">
             The finished product
           </h2>
 
           {project.finalWork?.sections ? (
             /* ── NEW STRUCTURE: sections array, stacked or side-by-side ── */
-            <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-12 md:gap-16">
               {project.finalWork.sections.map((section, idx) =>
                 section.layout === "sideBySide" ? (
                   <div
                     key={idx}
-                    className="grid grid-cols-2 gap-10 items-start"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 items-start"
                   >
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2.5">
@@ -784,7 +784,7 @@ function ProjectDetail() {
             <>
               {project.finalWork?.description && (
                 <p
-                  className="text-gray-500 leading-relaxed mb-12"
+                  className="text-gray-500 leading-relaxed mb-8 md:mb-12"
                   style={{ "--highlight-color": accent }}
                   dangerouslySetInnerHTML={{
                     __html: project.finalWork.description,
@@ -802,7 +802,7 @@ function ProjectDetail() {
                 return (
                   <>
                     {project.finalWork?.extraImages?.length > 0 && (
-                      <div className="flex flex-col gap-10 mb-8">
+                      <div className="flex flex-col gap-8 md:gap-10 mb-8">
                         {project.finalWork.extraImages.map((item, idx) => (
                           <div key={idx} className="flex flex-col gap-4">
                             {item.label && (
@@ -860,9 +860,10 @@ function ProjectDetail() {
                         </div>
                       )}
 
-                      <div className="flex gap-16 mt-10">
+                      {/* Mobile screens — stack on mobile, side by side on desktop */}
+                      <div className="flex flex-col md:flex-row gap-6 md:gap-16 mt-6 md:mt-10">
                         {project.finalWork?.mobile1 && (
-                          <div className="flex flex-col gap-4 max-w-[250px]">
+                          <div className="flex flex-col gap-4 w-full md:w-auto md:max-w-[250px]">
                             {project.finalWork.mobile1.label && (
                               <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                                 {project.finalWork.mobile1.label}
@@ -888,7 +889,7 @@ function ProjectDetail() {
                         )}
 
                         {project.finalWork?.mobile2 && (
-                          <div className="flex flex-col gap-4 max-w-[250px]">
+                          <div className="flex flex-col gap-4 w-full md:w-auto md:max-w-[250px]">
                             {project.finalWork.mobile2.label && (
                               <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                                 {project.finalWork.mobile2.label}
@@ -925,17 +926,17 @@ function ProjectDetail() {
       {/* ── WHAT'S NEXT ── */}
       {project.whatsNext && (
         <section
-          className="px-20 py-20 border-b border-gray-200"
+          className="px-6 md:px-20 py-16 md:py-20 border-b border-gray-200"
           style={{ background: `${accent}08` }}
         >
           <div className="max-w-6xl mx-auto">
             <p className="text-sm font-semibold mb-3" style={{ color: accent }}>
               What's Next
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6">
               {project.whatsNext.heading}
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-10 max-w-3xl">
+            <p className="text-gray-600 leading-relaxed mb-8 md:mb-10 max-w-3xl">
               {project.whatsNext.description}
             </p>
 
@@ -961,17 +962,17 @@ function ProjectDetail() {
 
       {/*Final Work Demo Video*/}
       {project.demoVideo && (
-        <section className="px-20 py-20 bg-gray-50 border-b border-gray-200">
+        <section className="px-6 md:px-20 py-16 md:py-20 bg-gray-50 border-b border-gray-200">
           <div className="max-w-6xl mx-auto">
             <p className="text-sm font-semibold mb-3" style={{ color: accent }}>
               In Action
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-12">
-              See the sphere in motion
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 md:mb-12">
+              {project.demoVideo.heading}
             </h2>
             <div className="rounded-2xl overflow-hidden border border-gray-200">
               <video
-                src={project.demoVideo}
+                src={project.demoVideo.src}
                 autoPlay
                 muted
                 loop

@@ -101,7 +101,10 @@ const projects = [
       mobile1: { src: "/cozmos/ie_mobile1.svg", label: "Mobile view 1" },
       mobile2: { src: "/cozmos/ie_mobile2.svg", label: "Mobile view 2" },
     },
-    demoVideo: "/cozmos/ie_video.mp4",
+    demoVideo: {
+      src: "/cozmos/ie_video.mp4",
+      heading: "See the sphere in motion",
+    },
   },
 
   {
