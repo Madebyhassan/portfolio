@@ -56,13 +56,13 @@ function ProjectDetail() {
 
       {/* ── HERO ── */}
       <section
-        className="px-6 md:px-20 pt-28 md:pt-40 pb-16 md:pb-24 relative overflow-hidden"
+        className="px-6 md:px-20 pt-40 md:pt-50 pb-16 md:pb-24 relative overflow-hidden"
         style={{ background: heroBg }}
       >
         {/* Back to Work — floats over hero */}
         <Link
           to="/"
-          className="absolute top-20 left-6 md:top-24 md:left-20 text-sm text-white/50 hover:text-white transition-colors z-20 flex items-center gap-1.5"
+          className="absolute top-25 left-10 md:top-35 md:left-36 text-sm text-white/50 hover:text-white transition-colors z-20 flex items-center gap-1.5"
         >
           ← Back to Work
         </Link>
@@ -220,7 +220,7 @@ function ProjectDetail() {
                     style={{ color: accent }}
                   >
                     {stat.number}
-                    <span className="text-gray-900">{stat.suffix}</span>
+                    <span style={{ color: accent }}>{stat.suffix}</span>
                   </div>
                   <div className="text-xs md:text-sm text-gray-500 font-medium leading-tight">
                     {stat.label}
@@ -286,7 +286,7 @@ function ProjectDetail() {
                   key={tool}
                   className="px-5 py-2.5 rounded-full text-sm font-semibold border-[1.5px]"
                   style={
-                    i < 3
+                    i < 5
                       ? {
                           color: accent,
                           borderColor: accent,

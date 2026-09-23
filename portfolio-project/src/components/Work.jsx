@@ -32,14 +32,12 @@ function Work() {
           <Link
             key={project.id}
             to={`/project/${project.id}`}
-            className="group relative rounded-2xl overflow-hidden flex flex-col"
+            className="group relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300"
+            style={{
+              borderLeft: `4px solid ${project.accent || "#6366F1"}`,
+              borderBottom: `4px solid ${project.accent || "#6366F1"}`,
+            }}
           >
-            {/* Left accent border — full card height */}
-            <div
-              className="absolute left-0 top-0 bottom-0 w-1 z-20 transition-all duration-300 group-hover:w-[3px]"
-              style={{ background: project.accent || "#6366F1" }}
-            />
-
             {/* ── IMAGE SECTION — aspect ratio instead of fixed height, so it scales naturally ── */}
             <div className="relative overflow-hidden aspect-[16/8] md:aspect-[16/5]">
               {/* Background */}

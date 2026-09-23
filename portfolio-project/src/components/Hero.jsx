@@ -112,7 +112,7 @@ const staticBadges = [
 function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden px-6 py-32 md:p-16 lg:p-24 md:pb-32 lg:pb-40"
+      className="relative min-h-screen flex items-center overflow-hidden px-6 py-16 md:p-16 lg:p-24 md:pb-32 lg:pb-40"
       style={{ background: "#0A0A1B" }}
     >
       {/* Background glows */}

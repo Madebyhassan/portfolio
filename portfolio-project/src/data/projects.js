@@ -6,109 +6,6 @@
 const projects = [
   {
     id: 1,
-    slug: "cozmos",
-    title: "Cozmos",
-    category: "UX Design · Brand Design",
-    categoryColor: "bg-indigo-100 text-indigo-500",
-    accent: "#7C3AED",
-    heroBg: "#0D0520",
-    image: "/cozmos/Cozmos.png",
-    summary:
-      "Empowering influencers to connect smarter — through a branded platform that turns their identity into a powerful product showcase.",
-    role: "UX Design · Brand Design",
-    company: "Cozmos",
-    year: "2024",
-    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Canva"],
-    liveUrl: "https://www.cozmos.world/en/cozmos_world",
-    githubUrl: null,
-    overview: [
-      "Cozmos is a platform built for the modern content creator, giving influencers a unique and personalised sphere to showcase and market their brand more effectively.",
-      "My role spanned from early UX research through to high-fidelity UI delivery and brand identity design.",
-    ],
-    stats: [
-      { number: "60", suffix: "%", label: "Increase in click-through rate" },
-      { number: "100", suffix: "+", label: "Growth in customer sign-ups" },
-      { number: "1", suffix: "k", label: "Active creators on platform" },
-      { number: "4", suffix: "mo", label: "From concept to launch" },
-    ],
-    contributions: [
-      {
-        icon: "/cozmos/logos/brand.svg",
-        title: "Brand Design",
-        description:
-          "Developed the visual identity and improved the overall brand experience.",
-      },
-      {
-        icon: "/cozmos/logos/figma.svg",
-        title: "UX Design",
-        description:
-          "Led user research, journey mapping, and wireframing. Designed and tested for brand experience.",
-      },
-      {
-        icon: "/cozmos/logos/ui.svg",
-        title: "UI & Prototyping",
-        description:
-          "Delivered high-fidelity screens and Figma components to integrate within Cozmos' existing platform.",
-      },
-    ],
-    process: [
-      {
-        title: "Researching the Landscape",
-        description:
-          "Analysed existing link-in-bio platforms such as Beacons, Linktree, Komi, and others, to understand how creators were currently showcasing their brand and content.",
-        images: ["/cozmos/link-in-bio.svg"],
-      },
-      {
-        title: "Identifying Pain Points",
-        description:
-          "Translated the research into five recurring issues, from information overload to low engagement that were consistently holding creators back.",
-        images: ["/cozmos/cozmos-problems.png"],
-      },
-      {
-        title: "Designing the Solutions",
-        description:
-          "Converted each pain point into a concrete platform feature, building a system creators could use to showcase their brand more effectively.",
-        images: ["/cozmos/cozmos-solutions.png"],
-      },
-      // keep your existing "Design & Iteration" step here if you still want it after these
-      {
-        title: "Defining User Needs & Concept Design",
-        description:
-          "Researched a clear problem statement: creators needed a platform that let them maintain their voice while brands needed measurable performance.",
-        images: [
-          "/cozmos/brand-images-ie.png", // top left
-          "/cozmos/colour-palette-ie.png", // top right
-          "/cozmos/theme.svg", // wide bottom
-        ],
-      },
-      {
-        title: "Design & Iteration",
-        description:
-          "Built low-fidelity wireframes, ran usability tests with several creators, and iterated based on findings. The creator IMAETERNAL that we tested with had unique needs and helped us refine the platform to be more inclusive of different creator types.",
-        layout: "row",
-        images: [
-          "/cozmos/ie-draft1.svg",
-          "/cozmos/ie-draft2.svg",
-          "/cozmos/ie-draft3.svg",
-          // add as many as you like
-        ],
-      },
-    ],
-    // Cozmos — keep edge-to-edge cropped look:
-    finalWork: {
-      fit: "cover", // or omit — cover is the default
-      hero: { src: "/cozmos/IEfinal.svg", label: "Cover mockup" },
-      mobile1: { src: "/cozmos/ie_mobile1.svg", label: "Mobile view 1" },
-      mobile2: { src: "/cozmos/ie_mobile2.svg", label: "Mobile view 2" },
-    },
-    demoVideo: {
-      src: "/cozmos/ie_video.mp4",
-      heading: "See the sphere in motion",
-    },
-  },
-
-  {
-    id: 2,
     slug: "paliux",
     title: "Paliux",
     category: "UX/UI Design · Frontend · AI",
@@ -324,15 +221,118 @@ const projects = [
     whatsNext: {
       heading: "Where Paliux is headed",
       description:
-        "Paliux is live and shipping real value today, but this is just the first release. The roadmap focuses on closing the gap we identified in research — moving from feedback to fix, and extending Paliux beyond a single design submission into a tool designers reach for throughout their entire workflow.",
+        "Paliux is live and currently undergoing data testing and collection. The roadmap is set and mainly focuses on closing the gap we identified in research, integrating the fix feature for users and expanding further.",
       roadmap: [
-        "Visual fix previews — see a rendered before/after of the suggested change, not just a text description",
-        "Generated code snippets — copy/paste fixes for common issues directly into your project",
-        "Chrome extension — analyse any live site instantly from the browser toolbar",
-        "Session history — save and revisit the last several analyses",
-        "Team accounts — shared workspaces for design teams to collaborate on feedback",
-        "Platform integrations — bring Paliux feedback directly into Figma, Webflow, and Framer",
+        "Visual fix previews: See a rendered before and after of the suggested change",
+        "Generated code snippets: Copy/paste fixes for common issues directly into your project",
+        "Chrome extension: Further improve the extention app to any live site instantly from the browser toolbar",
+        "Session history: Save and revisit the last several analyses",
+        "Team accounts: Shared workspaces for design teams to collaborate on feedback",
+        "Platform integrations: Bring Paliux feedback directly into Figma, Webflow, and Framer",
       ],
+    },
+  },
+
+  {
+    id: 2,
+    slug: "cozmos",
+    title: "Cozmos",
+    category: "UX Design · Brand Design",
+    categoryColor: "bg-indigo-100 text-indigo-500",
+    accent: "#7C3AED",
+    heroBg: "#0D0520",
+    image: "/cozmos/Cozmos.png",
+    summary:
+      "Empowering influencers to connect smarter — through a branded platform that turns their identity into a powerful product showcase.",
+    role: "UX Design · Brand Design",
+    company: "Cozmos",
+    year: "2024",
+    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Canva"],
+    liveUrl: "https://www.cozmos.world/en/cozmos_world",
+    githubUrl: null,
+    overview: [
+      "Cozmos is a platform built for the modern content creator, giving influencers a unique and personalised sphere to showcase and market their brand more effectively.",
+      "My role spanned from early UX research through to high-fidelity UI delivery and brand identity design.",
+    ],
+    stats: [
+      { number: "60", suffix: "%", label: "Increase in click-through rate" },
+      { number: "100", suffix: "+", label: "Growth in customer sign-ups" },
+      { number: "1", suffix: "k", label: "Active creators on platform" },
+      { number: "4", suffix: "mo", label: "From concept to launch" },
+    ],
+    contributions: [
+      {
+        icon: "/cozmos/logos/brand.svg",
+        title: "Brand Design",
+        description:
+          "Developed the visual identity and improved the overall brand experience.",
+      },
+      {
+        icon: "/cozmos/logos/figma.svg",
+        title: "UX Design",
+        description:
+          "Led user research, journey mapping, and wireframing. Designed and tested for brand experience.",
+      },
+      {
+        icon: "/cozmos/logos/ui.svg",
+        title: "UI & Prototyping",
+        description:
+          "Delivered high-fidelity screens and Figma components to integrate within Cozmos' existing platform.",
+      },
+    ],
+    process: [
+      {
+        title: "Researching the landscape",
+        description:
+          "Analysed existing link-in-bio platforms such as Beacons, Linktree, Komi, and others, to understand how creators were currently showcasing their brand and content.",
+        images: ["/cozmos/link-in-bio.svg"],
+      },
+      {
+        title: "Identifying pain points",
+        description:
+          "Translated the research into five recurring issues, from information overload to low engagement that were consistently holding creators back.",
+        images: ["/cozmos/cozmos-problems.png"],
+      },
+      {
+        title: "Designing the solutions",
+        description:
+          "Converted each pain point into a concrete platform feature, building a system creators could use to showcase their brand more effectively.",
+        images: ["/cozmos/cozmos-solutions.png"],
+      },
+      // keep your existing "Design & Iteration" step here if you still want it after these
+      {
+        title: "Defining user needs & concept design",
+        description:
+          "Researched a clear problem statement: creators needed a platform that let them maintain their voice while brands needed measurable performance.",
+        images: [
+          "/cozmos/brand-images-ie.png", // top left
+          "/cozmos/colour-palette-ie.png", // top right
+          "/cozmos/theme.svg", // wide bottom
+        ],
+      },
+      {
+        title: "Design & Iteration",
+        description:
+          "Built low-fidelity wireframes, ran usability tests with several creators, and iterated based on findings. The creator IMAETERNAL that we tested with had unique needs and helped us refine the platform to be more inclusive of different creator types.",
+        layout: "row",
+        images: [
+          "/cozmos/ie-draft1.svg",
+          "/cozmos/ie-draft2.svg",
+          "/cozmos/ie-draft3.svg",
+          // add as many as you like
+        ],
+      },
+    ],
+    // Cozmos — keep edge-to-edge cropped look:
+    finalWork: {
+      fit: "cover", // or omit — cover is the default
+      hero: { src: "/cozmos/IEfinal.svg", label: "Cover mockup" },
+      mobile1: { src: "/cozmos/ie_mobile1.svg", label: "Mobile view 1" },
+      mobile2: { src: "/cozmos/ie_mobile2.svg", label: "Mobile view 2" },
+    },
+    demoVideo: {
+      src: "/cozmos/ie_video.mp4",
+      heading: "See the sphere in motion",
     },
   },
 
