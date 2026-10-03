@@ -30,7 +30,7 @@ It is now evolving into a Chrome extension that checks live pages for UX and acc
 
 ## Tech stack
 
-React · Vite · Tailwind CSS · HTML · API · Supabase · EmailJS · Vercel
+Figma · React · Vite · Tailwind CSS · HTML · API · Supabase · EmailJS · Vercel
 
 ## Run it locally
 
