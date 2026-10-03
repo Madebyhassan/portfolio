@@ -1,16 +1,47 @@
-# React + Vite
+# Hassan Al-Hashimi — UX/AI Engineer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Designed in Figma, built in React.
 
-Currently, two official plugins are available:
+**Live site:** [madebyhassan.com](https://madebyhassan.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Preview of madebyhassan.com](./public/preview.png)
 
-## React Compiler
+## What this project shows
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Design to code, end to end.** Every page started in my own Figma design system and was built by hand in React and Tailwind CSS. No templates or site builders.
+- **A design system carried into code.** Colour, typography and spacing decisions from Figma are applied consistently through reusable components and Tailwind styles.
+- **Accessibility built in.** Semantic landmarks (`<nav>`, `<main>`, `<footer>`), one `<h1>` per page, and a keyboard-safe mobile menu that closes with Escape, announces its state to screen readers, and is unreachable while hidden.
+- **Content-driven architecture.** Every case study is generated from one data file (`src/data/projects.js`), so adding a project means adding data, not building a new page.
 
-## Expanding the ESLint configuration
+## Featured project: Paliux
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Paliux is an AI-powered UX critique tool I designed and built on my own. A user submits a design as a description, an uploaded file, or a live URL, and gets back a structured analysis. Each finding is traced to a published principle from a curated rubric of 30+ (Nielsen's heuristics, WCAG 2.1, Laws of UX).
+
+It is now evolving into a Chrome extension that checks live pages for UX and accessibility issues before launch.
+
+**What building it taught me**
+
+- **Shipping a whole product alone.** Research, wireframes, a design system, a React frontend, serverless API functions on Vercel, and a Supabase backend, all owned end to end.
+- **Prompt engineering is product design.** Turning a rubric into instructions a model follows reliably took far more iteration than the interface did.
+- **You can't improve what you don't measure.** I built an evaluation pipeline with labelled test cases to compare the AI's findings against expert judgement, and learnt that judgement-based feedback has to be measured with precision and recall rather than a single accuracy score.
+- **Real-world constraints break naive builds.** Image size limits, token budgets, extracting a page's structure with headless Chromium, and bugs that only appeared on the deployed endpoint all forced me to rethink parts of the architecture.
+
+[Read the full Paliux case study →](https://madebyhassan.com/project/1)
+
+## Tech stack
+
+React · Vite · Tailwind CSS · HTML · API · Supabase · EmailJS · Vercel
+
+## Run it locally
+
+```bash
+git clone https://github.com/Madebyhassan/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+## Contact
+
+- **LinkedIn:** [linkedin.com/in/hassan-alhashimi](https://www.linkedin.com/in/hassan-alhashimi/)
+- **Email:** [Hassan_Al-Hashimi@hotmail.com](mailto:Hassan_Al-Hashimi@hotmail.com)
